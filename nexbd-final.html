@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXBD - প্রিমিয়াম ফ্যাশন</title>
+<style>
+:root{
+--c-p:#000;--c-s:#fff;--c-a:#1a1a1a;--c-t:#333;--c-tl:#666;--c-b:#e0e0e0;--c-bg:#fff;--c-bgl:#f8f8f8;--c-ok:#10b981;--c-err:#ef4444
+}
+[data-theme="dark"]{
+--c-p:#fff;--c-s:#1a1a1a;--c-a:#333;--c-t:#e0e0e0;--c-tl:#999;--c-b:#333;--c-bg:#1a1a1a;--c-bgl:#222;--c-ok:#10b981;--c-err:#ef4444
+}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans Bengali','Segoe UI',Tahoma,sans-serif;color:var(--c-t);background:var(--c-bg);line-height:1.6;transition:background .3s,color .3s}a{text-decoration:none;color:inherit}.container{max-width:1200px;margin:0 auto;padding:0 20px}.page{display:none}.page.active{display:block}.header{background:var(--c-bg);border-bottom:1px solid var(--c-b);position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);box-shadow:0 2px 8px rgba(0,0,0,.05)}.header-content{display:flex;justify-content:space-between;align-items:center;padding:16px 0}.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:24px;cursor:pointer;color:var(--c-p)}.logo-icon{width:36px;height:36px;color:var(--c-p)}.nav-menu{display:flex;align-items:center;gap:24px}.nav-link{font-size:16px;font-weight:500;cursor:pointer;color:var(--c-t);transition:color .3s}.nav-link:hover{color:var(--c-p)}.theme-toggle{width:40px;height:40px;border-radius:50%;background:var(--c-bgl);border:2px solid var(--c-b);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s}.theme-toggle:hover{transform:scale(1.1);border-color:var(--c-p)}.theme-icon{width:20px;height:20px;color:var(--c-p)}.cart-link{position:relative}.cart-icon{width:24px;height:24px;color:var(--c-p)}.cart-count{position:absolute;top:-8px;right:-8px;background:var(--c-p);color:var(--c-s);font-size:11px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center}.hero{padding:80px 0;background:linear-gradient(135deg,var(--c-bgl) 0%,var(--c-bg) 100%)}.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.hero-title{font-size:56px;font-weight:700;line-height:1.1;margin-bottom:16px;color:var(--c-p)}.hero-subtitle{font-size:24px;margin-bottom:16px;color:var(--c-tl)}.hero-description{font-size:18px;margin-bottom:32px;color:var(--c-tl)}.product-showcase{background:var(--c-s);border-radius:16px;padding:30px;box-shadow:0 10px 40px rgba(0,0,0,.1);position:relative;overflow:hidden}.showcase-badge{position:absolute;top:20px;right:20px;background:var(--c-p);color:var(--c-s);padding:8px 20px;border-radius:25px;font-size:14px;font-weight:700;z-index:10}.showcase-img{width:100%;height:auto;border-radius:12px;display:block}.promo-banner{background:linear-gradient(135deg,var(--c-p) 0%,var(--c-a) 100%);color:var(--c-s);padding:24px 32px;border-radius:16px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 10px 30px rgba(0,0,0,.2)}.promo-content h3{font-size:32px;margin-bottom:8px;font-weight:800}.promo-content p{font-size:18px;opacity:.95}.promo-badge{background:#10b981;padding:10px 24px;border-radius:10px;font-size:20px;font-weight:800}.products{padding:80px 0}.section-header{text-align:center;margin-bottom:60px}.section-title{font-size:48px;font-weight:800;margin-bottom:12px;color:var(--c-p)}.section-subtitle{font-size:20px;color:var(--c-tl)}.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}.product-card{background:var(--c-s);border:1px solid var(--c-b);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s;box-shadow:0 4px 12px rgba(0,0,0,.05)}.product-card:hover{transform:translateY(-12px);box-shadow:0 20px 40px rgba(0,0,0,.15)}.product-image-wrapper{position:relative;background:var(--c-bgl);height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden}.product-badge{position:absolute;top:16px;left:16px;background:var(--c-p);color:var(--c-s);padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;z-index:10}.quality-badge{position:absolute;top:16px;right:16px;background:#ff9500;color:#fff;padding:8px 16px;border-radius:8px;font-size:11px;font-weight:800;z-index:10}.product-img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.product-card:hover .product-img{transform:scale(1.1)}.product-info{padding:24px}.product-name{font-size:20px;font-weight:700;margin-bottom:8px;color:var(--c-p)}.product-description{font-size:15px;color:var(--c-tl);margin-bottom:16px}.product-footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px}.product-price{font-size:28px;font-weight:800;color:var(--c-p)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:all .3s;border:none;font-family:inherit}.btn-primary{background:var(--c-p);color:var(--c-s)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}.btn-secondary{background:transparent;color:var(--c-p);border:2px solid var(--c-p)}.btn-secondary:hover{background:var(--c-p);color:var(--c-s)}.btn-accent{background:var(--c-a);color:var(--c-s)}.btn-full{width:100%}.features{padding:80px 0;background:var(--c-bgl)}.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px}.feature-item{text-align:center;padding:32px;background:var(--c-s);border-radius:16px;border:1px solid var(--c-b);transition:all .3s}.feature-item:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,.1)}.feature-icon{width:64px;height:64px;margin:0 auto 24px;color:var(--c-p)}.feature-title{font-size:22px;font-weight:700;margin-bottom:12px;color:var(--c-p)}.feature-description{font-size:16px;color:var(--c-tl)}.footer{background:var(--c-p);color:var(--c-s);padding:80px 0 30px;margin-top:100px}.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:48px;margin-bottom:48px}.footer-brand .logo{color:var(--c-s);margin-bottom:20px}.footer-description{opacity:.8;font-size:16px;line-height:1.8}.footer-heading{font-size:20px;font-weight:700;margin-bottom:20px}.footer-links p{opacity:.8;margin-bottom:12px;font-size:16px}.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;opacity:.7;font-size:15px}.product-details{padding:60px 0}.product-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px}.main-image{background:var(--c-bgl);border-radius:16px;height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:24px;border:1px solid var(--c-b)}.gallery-img{width:100%;height:100%;object-fit:cover;display:none}.gallery-img.active{display:block}.thumbnail-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.thumbnail{background:var(--c-bgl);border:3px solid transparent;border-radius:12px;cursor:pointer;transition:all .3s;height:120px;display:flex;align-items:center;justify-content:center;overflow:hidden}.thumbnail:hover,.thumbnail.active{border-color:var(--c-p);transform:scale(1.05)}.thumb-img{width:100%;height:100%;object-fit:cover}.product-title{font-size:42px;font-weight:800;margin-bottom:24px;color:var(--c-p)}.product-price-section{display:flex;align-items:center;gap:20px;margin-bottom:36px}.current-price{font-size:42px;font-weight:800;color:var(--c-p)}.original-price{font-size:28px;color:var(--c-tl);text-decoration:line-through}.discount-badge{background:var(--c-ok);color:#fff;padding:8px 16px;border-radius:8px;font-size:16px;font-weight:700}.product-description-box{margin-bottom:36px;padding:28px;background:var(--c-bgl);border-radius:12px;border:1px solid var(--c-b)}.product-description-box h3{font-size:20px;font-weight:700;margin-bottom:16px;color:var(--c-p)}.product-description-box ul{list-style:none}.product-description-box li{padding:10px 0 10px 28px;position:relative;font-size:16px}.product-description-box li::before{content:'✓';position:absolute;left:0;color:var(--c-ok);font-weight:700;font-size:18px}.size-selection,.quantity-selection{margin-bottom:36px}.size-selection h3,.quantity-selection h3{font-size:18px;font-weight:700;margin-bottom:16px;color:var(--c-p)}.size-options{display:flex;gap:16px}.size-btn{width:70px;height:70px;border:2px solid var(--c-b);border-radius:12px;font-size:20px;font-weight:700;background:var(--c-s);cursor:pointer;transition:all .3s;color:var(--c-t)}.size-btn.active,.size-btn:hover{border-color:var(--c-p);background:var(--c-p);color:var(--c-s);transform:scale(1.05)}.quantity-controls{display:flex;border:2px solid var(--c-b);border-radius:12px;overflow:hidden;width:fit-content}.qty-btn{width:56px;height:56px;background:var(--c-bgl);font-size:28px;cursor:pointer;border:none;color:var(--c-p);font-weight:700}.qty-btn:hover{background:var(--c-b)}.qty-input{width:100px;height:56px;border:none;text-align:center;font-size:20px;font-weight:700;background:var(--c-s);color:var(--c-t)}.product-actions{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}.mobile-sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--c-s);border-top:2px solid var(--c-b);padding:16px 24px;display:none;align-items:center;justify-content:space-between;box-shadow:0 -8px 24px rgba(0,0,0,.1);z-index:999}.sticky-price{display:flex;flex-direction:column}.sticky-label{font-size:13px;color:var(--c-tl)}.sticky-amount{font-size:24px;font-weight:800;color:var(--c-p)}.cart-section{padding:60px 0 120px;min-height:60vh}.page-title{font-size:48px;font-weight:800;margin-bottom:48px;color:var(--c-p)}.empty-cart{text-align:center;padding:100px 24px}.empty-cart.show{display:block}.empty-cart-icon{width:200px;height:200px;margin:0 auto 32px;opacity:.6}.empty-cart h2{font-size:32px;font-weight:700;margin-bottom:16px;color:var(--c-p)}.empty-cart p{font-size:18px;color:var(--c-tl);margin-bottom:36px}.cart-content{display:grid;grid-template-columns:1fr 450px;gap:48px}.cart-items{display:flex;flex-direction:column;gap:24px}.cart-item{display:grid;grid-template-columns:140px 1fr auto;gap:24px;padding:24px;background:var(--c-s);border:2px solid var(--c-b);border-radius:16px}.cart-item-image{width:140px;height:180px;background:var(--c-bgl);border-radius:12px;overflow:hidden}.cart-img{width:100%;height:100%;object-fit:cover}.cart-item-name{font-size:22px;font-weight:700;margin-bottom:12px;color:var(--c-p)}.cart-item-meta{display:flex;gap:20px;font-size:15px;color:var(--c-tl);margin-bottom:16px;font-weight:600}.cart-item-price{font-size:26px;font-weight:800;color:var(--c-p)}.cart-item-actions{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end}.remove-btn{color:var(--c-err);font-size:15px;padding:8px 16px;border-radius:8px;cursor:pointer;border:none;background:none;font-weight:600}.remove-btn:hover{background:rgba(239,68,68,.1)}.item-quantity-controls{display:flex;border:2px solid var(--c-b);border-radius:8px;overflow:hidden}.item-qty-btn{width:42px;height:42px;background:var(--c-bgl);font-size:20px;cursor:pointer;border:none;color:var(--c-p);font-weight:700}.item-qty-btn:hover{background:var(--c-b)}.item-qty-display{width:60px;height:42px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--c-p);font-size:18px}.cart-summary{position:sticky;top:120px;background:var(--c-bgl);border-radius:16px;padding:32px;border:2px solid var(--c-b)}.summary-title{font-size:28px;font-weight:800;margin-bottom:24px;color:var(--c-p)}.summary-row{display:flex;justify-content:space-between;margin-bottom:16px;font-size:17px}.summary-divider{height:2px;background:var(--c-b);margin:24px 0}.summary-total{font-size:26px;font-weight:800;color:var(--c-p)}.continue-shopping{display:block;text-align:center;margin-top:20px;color:var(--c-tl);cursor:pointer;font-size:16px;font-weight:600}.continue-shopping:hover{color:var(--c-p)}.checkout-section{padding:60px 0 100px}.checkout-progress{display:flex;align-items:center;justify-content:center;margin-bottom:80px}.progress-step{display:flex;flex-direction:column;align-items:center;gap:12px}.step-circle{width:56px;height:56px;border-radius:50%;border:3px solid var(--c-b);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;background:var(--c-s);color:var(--c-tl)}.progress-step.active .step-circle,.progress-step.completed .step-circle{background:var(--c-p);color:var(--c-s);border-color:var(--c-p)}.step-label{font-size:15px;color:var(--c-tl);font-weight:600}.progress-line{width:100px;height:3px;background:var(--c-b);margin:0 12px}.checkout-content{display:grid;grid-template-columns:1fr 450px;gap:48px}.checkout-form{background:var(--c-s);border:2px solid var(--c-b);border-radius:16px;padding:40px}.section-heading{font-size:26px;font-weight:800;margin-bottom:28px;color:var(--c-p)}.form-group{margin-bottom:24px}.form-group label{display:block;font-weight:700;margin-bottom:10px;font-size:16px;color:var(--c-p)}.form-input,.form-textarea,.form-select{width:100%;padding:14px 18px;border:2px solid var(--c-b);border-radius:10px;font-size:16px;font-family:inherit;background:var(--c-s);color:var(--c-t)}.form-input:focus,.form-textarea:focus,.form-select:focus{outline:none;border-color:var(--c-p);box-shadow:0 0 0 4px rgba(0,0,0,.05)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}.error-message{display:block;color:var(--c-err);font-size:14px;margin-top:8px;font-weight:600}.payment-option{display:block;cursor:pointer}.payment-option input[type=radio]{display:none}.payment-card{display:flex;align-items:center;gap:20px;padding:24px;border:3px solid var(--c-b);border-radius:12px;transition:all .3s}.payment-option input[type=radio]:checked+.payment-card{border-color:var(--c-p);background:rgba(0,0,0,.02)}.order-summary-checkout{position:sticky;top:120px;background:var(--c-bgl);border-radius:16px;padding:32px;border:2px solid var(--c-b)}.summary-items{margin-bottom:28px}.summary-item{display:flex;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--c-b)}.summary-item:last-child{border-bottom:none}.item-name{font-weight:700;margin-bottom:6px;font-size:17px;color:var(--c-p)}.item-details{font-size:14px;color:var(--c-tl);font-weight:600}.item-total{font-weight:800;font-size:18px;color:var(--c-p)}.calc-row{display:flex;justify-content:space-between;margin-bottom:16px;font-size:17px}.calc-divider{height:2px;background:var(--c-b);margin:24px 0}.calc-total{font-size:26px;font-weight:800;color:var(--c-p)}.security-badge{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;color:var(--c-tl);font-size:15px;font-weight:600}.success-section{padding:80px 0 100px}.success-content{max-width:900px;margin:0 auto;text-align:center}.success-checkmark{width:140px;height:140px;margin:0 auto 40px}.checkmark-circle{stroke-dasharray:340;stroke-dashoffset:340;animation:drawCircle .8s ease forwards}.checkmark-check{stroke-dasharray:100;stroke-dashoffset:100;animation:drawCheck .6s ease .4s forwards}.success-title{font-size:48px;font-weight:800;margin-bottom:20px;color:var(--c-ok)}.success-message{font-size:20px;color:var(--c-tl);margin-bottom:56px}.order-details-card{background:var(--c-s);border:2px solid var(--c-b);border-radius:16px;padding:40px;margin-bottom:56px;text-align:left}.order-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;padding-bottom:24px;border-bottom:2px solid var(--c-b)}.order-title{font-size:28px;font-weight:800;color:var(--c-p)}.order-id{font-size:18px;color:var(--c-tl);font-weight:700}.order-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}.info-item{display:flex;flex-direction:column;gap:6px}.info-item.full-width{grid-column:1/-1}.info-label{font-size:14px;color:var(--c-tl);font-weight:700}.info-value{font-size:18px;font-weight:600;color:var(--c-p)}.ordered-items{display:flex;flex-direction:column;gap:16px;margin-bottom:32px}.ordered-item{display:flex;justify-content:space-between;padding:16px;background:var(--c-bgl);border-radius:12px}.ordered-item-name{font-weight:700;font-size:17px;color:var(--c-p)}.ordered-item-details{font-size:14px;color:var(--c-tl);font-weight:600}.ordered-item-price{font-weight:800;font-size:18px;color:var(--c-p)}.total-row{display:flex;justify-content:space-between;margin-bottom:12px;font-size:17px}.total-divider{height:2px;background:var(--c-b);margin:20px 0}.total-final{font-size:28px;font-weight:800;color:var(--c-p)}.next-steps{margin-bottom:56px}.steps-title{font-size:28px;font-weight:800;margin-bottom:32px;color:var(--c-p)}.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}.step-card{background:var(--c-bgl);padding:32px;border-radius:16px;text-align:center;border:2px solid var(--c-b)}.step-number{width:56px;height:56px;border-radius:50%;background:var(--c-p);color:var(--c-s);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;margin:0 auto 20px}.step-card h4{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--c-p)}.step-card p{font-size:15px;color:var(--c-tl)}.success-actions{display:flex;justify-content:center;gap:20px;margin-bottom:56px}.contact-box{display:flex;align-items:center;justify-content:center;gap:20px;padding:28px;background:var(--c-bgl);border-radius:16px;border:2px solid var(--c-b)}.contact-box strong{font-size:18px;display:block;margin-bottom:6px;color:var(--c-p)}.contact-box p{font-size:15px;color:var(--c-tl)}@keyframes drawCircle{to{stroke-dashoffset:0}}@keyframes drawCheck{to{stroke-dashoffset:0}}@keyframes slideInRight{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes slideOutRight{from{transform:translateX(0);opacity:1}to{transform:translateX(400px);opacity:0}}@media(max-width:1024px){.product-layout,.cart-content,.checkout-content{grid-template-columns:1fr}.cart-summary,.order-summary-checkout{position:static}}@media(max-width:768px){.hero-content{grid-template-columns:1fr}.hero-title{font-size:40px}.product-grid{grid-template-columns:1fr}.product-title{font-size:32px}.mobile-sticky-bar{display:flex}.cart-item{grid-template-columns:100px 1fr}.cart-item-image{width:100px;height:130px}.cart-item-actions{grid-column:1/-1;flex-direction:row;justify-content:space-between}.form-row,.order-info-grid{grid-template-columns:1fr}.steps-grid{grid-template-columns:1fr}.success-actions{flex-direction:column}.success-actions .btn{width:100%}.promo-banner{flex-direction:column;text-align:center;gap:20px}.nav-menu{gap:16px}}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="container">
+<div class="header-content">
+<div class="logo" onclick="navigateTo('home')">
+<svg class="logo-icon" viewBox="0 0 40 40" fill="none"><path d="M8 10C8 8.89543 8.89543 8 10 8H30C31.1046 8 32 8.89543 32 10V32C32 33.1046 31.1046 34 30 34H10C8.89543 34 8 33.1046 8 32V10Z" stroke="currentColor" stroke-width="2"/><path d="M12 8V34" stroke="currentColor" stroke-width="2"/><path d="M28 8V34" stroke="currentColor" stroke-width="2"/><path d="M20 12L28 28L20 24L12 28L20 12Z" fill="currentColor"/></svg>
+<span>NEXBD</span>
+</div>
+<nav class="nav-menu">
+<span class="nav-link" onclick="navigateTo('home')">হোম</span>
+<span class="nav-link" onclick="navigateTo('product')">পণ্য</span>
+<button class="theme-toggle" onclick="toggleTheme()" title="থিম পরিবর্তন করুন">
+<svg class="theme-icon" viewBox="0 0 24 24" fill="none"><path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5M17.6859 17.69L18.5 18.5M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
+<span class="nav-link cart-link" onclick="navigateTo('cart')">
+<svg class="cart-icon" viewBox="0 0 24 24" fill="none"><path d="M9 2L7 6H3L7 20H17L21 6H17L15 2H9Z" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="22" r="1" fill="currentColor"/><circle cx="14" cy="22" r="1" fill="currentColor"/></svg>
+<span class="cart-count">0</span>
+</span>
+</nav>
+</div>
+</div>
+</header>
+
+<div id="homePage" class="page active">
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div>
+<h1 class="hero-title">প্রিমিয়াম ফ্যাশন</h1>
+<p class="hero-subtitle">আপনার স্টাইল, আপনার পছন্দ</p>
+<p class="hero-description">সেরা মানের পোশাক এখন আপনার হাতের মুঠোয়। বিশেষ ছাড়ে পাচ্ছেন প্রিমিয়াম কালেকশন।</p>
+<button class="btn btn-primary" onclick="navigateTo('product')">এখনই অর্ডার করুন</button>
+</div>
+<div>
+<div class="product-showcase">
+<div class="showcase-badge">নতুন</div>
+<img src="data:image/svg+xml,%3Csvg viewBox='0 0 400 500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='500' fill='%23f0f0f0'/%3E%3Crect x='80' y='100' width='240' height='300' rx='8' fill='%23d0e8f0'/%3E%3Ccircle cx='200' cy='160' r='20' fill='%23a0d0e0'/%3E%3Crect x='120' y='220' width='160' height='160' rx='4' fill='%23b0d8e8'/%3E%3Ctext x='200' y='450' text-anchor='middle' font-size='20' fill='%23666' font-family='Arial'%3EShirt%3C/text%3E%3C/svg%3E" class="showcase-img" alt="Premium Shirt" id="heroImg">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="products">
+<div class="container">
+<div class="promo-banner">
+<div class="promo-content">
+<h3>🎉 বিশেষ অফার!</h3>
+<p>সব পণ্যে পাচ্ছেন ২০-৩০% ছাড়! সীমিত সময়ের জন্য</p>
+</div>
+<div class="promo-badge">সেভ করুন ৳৫০০+</div>
+</div>
+
+<div class="section-header">
+<h2 class="section-title">ফিচারড পণ্য</h2>
+<p class="section-subtitle">আমাদের সেরা কালেকশন থেকে বেছে নিন</p>
+</div>
+<div class="product-grid" id="productGrid"></div>
+</div>
+</section>
+
+<section class="features">
+<div class="container">
+<div class="features-grid">
+<div class="feature-item">
+<svg class="feature-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/><path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/><path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/></svg>
+<h3 class="feature-title">ফ্রি ডেলিভারি</h3>
+<p class="feature-description">ঢাকার ভেতর ২৪ ঘণ্টায়</p>
+</div>
+<div class="feature-item">
+<svg class="feature-icon" viewBox="0 0 24 24" fill="none"><path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2"/><path d="M21 12V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16" stroke="currentColor" stroke-width="2"/></svg>
+<h3 class="feature-title">সেরা মান</h3>
+<p class="feature-description">১০০% অরিজিনাল পণ্য</p>
+</div>
+<div class="feature-item">
+<svg class="feature-icon" viewBox="0 0 24 24" fill="none"><path d="M3 10H21M3 6H21M3 14H21M3 18H21" stroke="currentColor" stroke-width="2"/></svg>
+<h3 class="feature-title">সহজ রিটার্ন</h3>
+<p class="feature-description">৭ দিনের মধ্যে</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div id="productPage" class="page">
+<section class="product-details">
+<div class="container">
+<div class="product-layout">
+<div>
+<div class="main-image">
+<img src="" class="gallery-img active" id="mainProductImage" alt="Product">
+</div>
+<div class="thumbnail-gallery" id="thumbnailGallery"></div>
+</div>
+
+<div>
+<h1 class="product-title" id="productName">প্রিমিয়াম শার্ট</h1>
+<div class="product-price-section">
+<span class="current-price" id="productPrice">৳১,৮৯৯</span>
+<span class="original-price">৳২,৪৯৯</span>
+<span class="discount-badge">২৪% ছাড়</span>
+</div>
+
+<div class="product-description-box">
+<h3>পণ্যের বিবরণ</h3>
+<ul>
+<li>১০০% প্রিমিয়াম কটন ফেব্রিক</li>
+<li>ম্যান্ডারিন কলার ডিজাইন</li>
+<li>ব্রিদেবল এবং আরামদায়ক</li>
+<li>সহজে ধোয়া যায়</li>
+<li>অফিস এবং ক্যাজুয়াল উভয়ের জন্য উপযুক্ত</li>
+</ul>
+</div>
+
+<div class="size-selection">
+<h3>সাইজ নির্বাচন করুন</h3>
+<div class="size-options">
+<button class="size-btn" data-size="S">S</button>
+<button class="size-btn active" data-size="M">M</button>
+<button class="size-btn" data-size="L">L</button>
+<button class="size-btn" data-size="XL">XL</button>
+</div>
+</div>
+
+<div class="quantity-selection">
+<h3>পরিমাণ</h3>
+<div class="quantity-controls">
+<button class="qty-btn" id="qtyMinus">−</button>
+<input type="number" class="qty-input" id="quantityInput" value="1" min="1" max="10" readonly>
+<button class="qty-btn" id="qtyPlus">+</button>
+</div>
+</div>
+
+<div class="product-actions">
+<button class="btn btn-primary btn-full" id="addToCartBtn">কার্টে যোগ করুন</button>
+<button class="btn btn-accent btn-full" id="buyNowBtn">এখনই কিনুন</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="mobile-sticky-bar">
+<div class="sticky-price">
+<span class="sticky-label">মূল্য:</span>
+<span class="sticky-amount">৳১,৮৯৯</span>
+</div>
+<button class="btn btn-primary" id="mobileAddToCart">কার্টে যোগ করুন</button>
+</div>
+</div>
+
+<div id="cartPage" class="page">
+<section class="cart-section">
+<div class="container">
+<h1 class="page-title">শপিং কার্ট</h1>
+<div class="empty-cart" id="emptyCart">
+<svg class="empty-cart-icon" viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="80" stroke="#e0e0e0" stroke-width="4"/><path d="M70 80L90 100L130 60" stroke="#e0e0e0" stroke-width="4"/><path d="M60 110L140 110" stroke="#e0e0e0" stroke-width="4"/></svg>
+<h2>আপনার কার্ট খালি</h2>
+<p>এখনো কোনো পণ্য যোগ করা হয়নি</p>
+<button class="btn btn-primary" onclick="navigateTo('product')">কেনাকাটা শুরু করুন</button>
+</div>
+<div class="cart-content" id="cartContent">
+<div class="cart-items" id="cartItems"></div>
+<div class="cart-summary">
+<h2 class="summary-title">অর্ডার সামারি</h2>
+<div class="summary-row"><span>সাবটোটাল (<span id="itemCount">0</span> টি পণ্য)</span><span id="subtotal">৳০</span></div>
+<div class="summary-row"><span>ডেলিভারি চার্জ</span><span id="deliveryCharge">৳০</span></div>
+<div class="summary-divider"></div>
+<div class="summary-row summary-total"><span>মোট</span><span id="totalAmount">৳০</span></div>
+<button class="btn btn-primary btn-full" id="proceedToCheckout">চেকআউট করুন</button>
+<span class="continue-shopping" onclick="navigateTo('product')">কেনাকাটা চালিয়ে যান</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div id="checkoutPage" class="page">
+<section class="checkout-section">
+<div class="container">
+<h1 class="page-title">চেকআউট</h1>
+<div class="checkout-progress">
+<div class="progress-step completed"><div class="step-circle">1</div><span class="step-label">কার্ট</span></div>
+<div class="progress-line"></div>
+<div class="progress-step active"><div class="step-circle">2</div><span class="step-label">তথ্য</span></div>
+<div class="progress-line"></div>
+<div class="progress-step"><div class="step-circle">3</div><span class="step-label">নিশ্চিতকরণ</span></div>
+</div>
+<div class="checkout-content">
+<div class="checkout-form">
+<h2 class="section-heading">ডেলিভারি তথ্য</h2>
+<form id="checkoutForm">
+<div class="form-group">
+<label for="customerName">সম্পূর্ণ নাম *</label>
+<input type="text" id="customerName" class="form-input" placeholder="আপনার নাম লিখুন" required>
+<span class="error-message" id="nameError"></span>
+</div>
+<div class="form-group">
+<label for="customerPhone">ফোন নম্বর *</label>
+<input type="tel" id="customerPhone" class="form-input" placeholder="০১৭xxxxxxxx" required>
+<span class="error-message" id="phoneError"></span>
+</div>
+<div class="form-group">
+<label for="customerAddress">সম্পূর্ণ ঠিকানা *</label>
+<textarea id="customerAddress" class="form-textarea" rows="3" placeholder="বাসা/ফ্ল্যাট নং, রোড, এলাকা" required></textarea>
+<span class="error-message" id="addressError"></span>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="customerCity">শহর *</label>
+<select id="customerCity" class="form-select" required>
+<option value="">নির্বাচন করুন</option>
+<option value="ঢাকা">ঢাকা</option>
+<option value="চট্টগ্রাম">চট্টগ্রাম</option>
+<option value="সিলেট">সিলেট</option>
+<option value="রাজশাহী">রাজশাহী</option>
+<option value="খুলনা">খুলনা</option>
+</select>
+<span class="error-message" id="cityError"></span>
+</div>
+<div class="form-group">
+<label for="customerZip">পোস্ট কোড</label>
+<input type="text" id="customerZip" class="form-input" placeholder="১২০০">
+</div>
+</div>
+<div class="form-group">
+<label for="orderNotes">অর্ডার নোট (ঐচ্ছিক)</label>
+<textarea id="orderNotes" class="form-textarea" rows="2" placeholder="বিশেষ নির্দেশনা থাকলে লিখুন"></textarea>
+</div>
+<h2 class="section-heading">পেমেন্ট পদ্ধতি</h2>
+<div style="margin-bottom:32px">
+<label class="payment-option">
+<input type="radio" name="paymentMethod" value="cod" checked>
+<div class="payment-card">
+<svg style="width:36px;height:36px" viewBox="0 0 24 24" fill="none"><path d="M20 12V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V5C4 3.89543 4.89543 3 6 3H13" stroke="currentColor" stroke-width="2"/></svg>
+<div><strong>ক্যাশ অন ডেলিভারি</strong><p style="font-size:15px;color:#666">পণ্য হাতে পেয়ে টাকা দিন</p></div>
+</div>
+</label>
+</div>
+</form>
+</div>
+<div class="order-summary-checkout">
+<h2 class="section-heading">অর্ডার সামারি</h2>
+<div class="summary-items" id="checkoutItems"></div>
+<div style="margin-bottom:28px">
+<div class="calc-row"><span>সাবটোটাল</span><span id="checkoutSubtotal">৳০</span></div>
+<div class="calc-row"><span>ডেলিভারি চার্জ</span><span id="checkoutDelivery">৳০</span></div>
+<div class="calc-divider"></div>
+<div class="calc-row calc-total"><span>সর্বমোট</span><span id="checkoutTotal">৳০</span></div>
+</div>
+<button type="submit" form="checkoutForm" class="btn btn-primary btn-full">অর্ডার নিশ্চিত করুন</button>
+<div class="security-badge">
+<svg style="width:22px;height:22px;color:#10b981" viewBox="0 0 24 24" fill="none"><path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="2"/><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/></svg>
+<span>নিরাপদ পেমেন্ট</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div id="successPage" class="page">
+<section class="success-section">
+<div class="container">
+<div class="success-content">
+<svg class="success-checkmark" viewBox="0 0 120 120" fill="none"><circle class="checkmark-circle" cx="60" cy="60" r="54" stroke="#10b981" stroke-width="4" fill="none"/><path class="checkmark-check" d="M35 60L52 77L85 44" stroke="#10b981" stroke-width="6" stroke-linecap="round" fill="none"/></svg>
+<h1 class="success-title">অর্ডার সফল হয়েছে!</h1>
+<p class="success-message">আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।</p>
+<div class="order-details-card">
+<div class="order-header">
+<h2 class="order-title">অর্ডার বিবরণ</h2>
+<span class="order-id">অর্ডার #<span id="displayOrderId">NEX001</span></span>
+</div>
+<div class="order-info-grid">
+<div class="info-item"><span class="info-label">নাম</span><span class="info-value" id="displayCustomerName">-</span></div>
+<div class="info-item"><span class="info-label">ফোন</span><span class="info-value" id="displayCustomerPhone">-</span></div>
+<div class="info-item full-width"><span class="info-label">ঠিকানা</span><span class="info-value" id="displayCustomerAddress">-</span></div>
+<div class="info-item"><span class="info-label">শহর</span><span class="info-value" id="displayCustomerCity">-</span></div>
+<div class="info-item"><span class="info-label">পেমেন্ট</span><span class="info-value">ক্যাশ অন ডেলিভারি</span></div>
+</div>
+<div style="margin-bottom:32px">
+<h3 style="font-size:22px;font-weight:800;margin-bottom:20px">অর্ডারকৃত পণ্য</h3>
+<div class="ordered-items" id="orderedItems"></div>
+</div>
+<div style="padding-top:24px;border-top:2px solid var(--c-b)">
+<div class="total-row"><span>সাবটোটাল</span><span id="displaySubtotal">৳০</span></div>
+<div class="total-row"><span>ডেলিভারি চার্জ</span><span id="displayDelivery">৳০</span></div>
+<div class="total-divider"></div>
+<div class="total-row total-final"><span>সর্বমোট</span><span id="displayTotal">৳০</span></div>
+</div>
+</div>
+<div class="next-steps">
+<h3 class="steps-title">পরবর্তী ধাপ</h3>
+<div class="steps-grid">
+<div class="step-card"><div class="step-number">১</div><h4>নিশ্চিতকরণ কল</h4><p>আমরা ২৪ ঘণ্টার মধ্যে আপনার সাথে যোগাযোগ করব</p></div>
+<div class="step-card"><div class="step-number">২</div><h4>পণ্য প্যাকেজিং</h4><p>আপনার পণ্য সযত্নে প্যাক করা হবে</p></div>
+<div class="step-card"><div class="step-number">৩</div><h4>ডেলিভারি</h4><p>ঢাকায় ২-৩ দিন, বাইরে ৪-৭ দিন</p></div>
+</div>
+</div>
+<div class="success-actions">
+<button class="btn btn-primary" onclick="navigateTo('home')">হোম পেজে যান</button>
+<button class="btn btn-secondary" onclick="navigateTo('product')">আরো কেনাকাটা করুন</button>
+</div>
+<div class="contact-box">
+<svg style="width:36px;height:36px" viewBox="0 0 24 24" fill="none"><path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2"/></svg>
+<div><strong>কোনো সমস্যা?</strong><p>আমাদের সাথে যোগাযোগ করুন: ০১৭১২৩৪৫৬৭৮</p></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-brand">
+<div class="logo">
+<svg class="logo-icon" viewBox="0 0 40 40" fill="none"><path d="M8 10C8 8.89543 8.89543 8 10 8H30C31.1046 8 32 8.89543 32 10V32C32 33.1046 31.1046 34 30 34H10C8.89543 34 8 33.1046 8 32V10Z" stroke="currentColor" stroke-width="2"/><path d="M12 8V34" stroke="currentColor" stroke-width="2"/><path d="M28 8V34" stroke="currentColor" stroke-width="2"/><path d="M20 12L28 28L20 24L12 28L20 12Z" fill="currentColor"/></svg>
+<span>NEXBD</span>
+</div>
+<p class="footer-description">প্রিমিয়াম ফ্যাশন আপনার হাতের মুঠোয়</p>
+</div>
+<div class="footer-links">
+<h4 class="footer-heading">যোগাযোগ</h4>
+<p>ফোন: ০১৭১২৩৪৫৬৭৮</p>
+<p>ইমেইল: info@nexbd.com</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; ২০২৬ NEXBD. সর্বস্বত্ব সংরক্ষিত।</p>
+</div>
+</div>
+</footer>
+
+<script>
+const productImages={1:"data:image/svg+xml,%3Csvg viewBox='0 0 400 500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='500' fill='%23e8f4f8'/%3E%3Crect x='80' y='100' width='240' height='300' rx='8' fill='%2380d4e8'/%3E%3Ccircle cx='200' cy='160' r='20' fill='%2360c4d8'/%3E%3Crect x='120' y='220' width='160' height='160' rx='4' fill='%2390dce8'/%3E%3Ctext x='200' y='460' text-anchor='middle' font-size='18' fill='%23333' font-family='Arial' font-weight='bold'%3ESky Blue Shirt%3C/text%3E%3C/svg%3E",2:"data:image/svg+xml,%3Csvg viewBox='0 0 400 500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='500' fill='%23e8f0e0'/%3E%3Crect x='80' y='100' width='240' height='300' rx='8' fill='%23708060'/%3E%3Ccircle cx='200' cy='160' r='20' fill='%23606850'/%3E%3Crect x='120' y='180' width='160' height='4' fill='%23d0d8c0'/%3E%3Crect x='120' y='220' width='160' height='160' rx='4' fill='%23607050'/%3E%3Ctext x='200' y='460' text-anchor='middle' font-size='18' fill='%23333' font-family='Arial' font-weight='bold'%3EOlive Green%3C/text%3E%3C/svg%3E",3:"data:image/svg+xml,%3Csvg viewBox='0 0 400 500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='500' fill='%23e0e0e0'/%3E%3Crect x='80' y='100' width='240' height='300' rx='8' fill='%232a2a2a'/%3E%3Ccircle cx='200' cy='160' r='20' fill='%23404040'/%3E%3Crect x='120' y='180' width='160' height='4' fill='%23d0d0d0'/%3E%3Crect x='120' y='220' width='160' height='160' rx='4' fill='%23202020'/%3E%3Ctext x='200' y='460' text-anchor='middle' font-size='18' fill='%23333' font-family='Arial' font-weight='bold'%3EBlack Stripe%3C/text%3E%3C/svg%3E",4:"data:image/svg+xml,%3Csvg viewBox='0 0 400 500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='500' fill='%23f0e8f0'/%3E%3Crect x='80' y='100' width='240' height='300' rx='8' fill='%236a3a5a'/%3E%3Ccircle cx='200' cy='160' r='20' fill='%235a2a4a'/%3E%3Crect x='120' y='220' width='160' height='160' rx='4' fill='%237a4a6a'/%3E%3Ctext x='200' y='460' text-anchor='middle' font-size='18' fill='%23333' font-family='Arial' font-weight='bold'%3EPurple Shirt%3C/text%3E%3C/svg%3E",5:"data:image/svg+xml,%3Csvg viewBox='0 0 400 500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='500' fill='%23f8f8f8'/%3E%3Crect x='80' y='100' width='240' height='300' rx='8' fill='%23ffffff'/%3E%3Ccircle cx='200' cy='160' r='20' fill='%23f0f0f0'/%3E%3Crect x='120' y='220' width='160' height='160' rx='4' fill='%23fafafa'/%3E%3Ctext x='200' y='460' text-anchor='middle' font-size='18' fill='%23333' font-family='Arial' font-weight='bold'%3EWhite Shirt%3C/text%3E%3C/svg%3E",6:"data:image/svg+xml,%3Csvg viewBox='0 0 400 500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='500' fill='%23e0e0e0'/%3E%3Crect x='80' y='100' width='240' height='300' rx='8' fill='%231a1a1a'/%3E%3Ccircle cx='200' cy='160' r='20' fill='%23303030'/%3E%3Crect x='120' y='220' width='160' height='160' rx='4' fill='%23101010'/%3E%3Ctext x='200' y='460' text-anchor='middle' font-size='18' fill='%23333' font-family='Arial' font-weight='bold'%3EBlack Formal%3C/text%3E%3C/svg%3E"};const products={1:{id:1,name:'স্কাই ব্লু প্রিমিয়াম শার্ট',price:1899,originalPrice:2499,description:'১০০% কটন | ম্যান্ডারিন কলার',badge:'বেস্টসেলার',quality:true},2:{id:2,name:'অলিভ গ্রিন স্ট্রাইপ শার্ট',price:1699,originalPrice:2299,description:'কটন ব্লেন্ড | হাফ স্লিভ',quality:true},3:{id:3,name:'ব্ল্যাক স্ট্রাইপ শার্ট',price:1799,originalPrice:2399,description:'প্রিমিয়াম কটন | হাফ স্লিভ',quality:true},4:{id:4,name:'পার্পল প্রিমিয়াম শার্ট',price:1999,originalPrice:2599,description:'১০০% কটন | ফুল স্লিভ',badge:'নতুন'},5:{id:5,name:'ক্লাসিক হোয়াইট শার্ট',price:1899,originalPrice:2499,description:'প্রিমিয়াম কটন | ম্যান্ডারিন কলার',badge:'বেস্টসেলার'},6:{id:6,name:'ব্ল্যাক ফরমাল শার্ট',price:2099,originalPrice:2799,description:'১০০% কটন | ফুল স্লিভ'}};let currentProductId=1;class Cart{constructor(){this.items=this.loadCart();this.deliveryCharge=60;this.freeDeliveryThreshold=2000}loadCart(){const saved=localStorage.getItem('nexbd_cart');return saved?JSON.parse(saved):[]}saveCart(){localStorage.setItem('nexbd_cart',JSON.stringify(this.items));this.updateCartCount()}addItem(productId,size,quantity){const product=products[productId];if(!product)return false;const existingIndex=this.items.findIndex(item=>item.productId===productId&&item.size===size);if(existingIndex>-1){this.items[existingIndex].quantity+=quantity}else{this.items.push({productId,name:product.name,price:product.price,size,quantity,description:product.description,image:productImages[productId]})}this.saveCart();return true}updateQuantity(index,quantity){if(quantity<=0){this.removeItem(index)}else if(quantity<=10){this.items[index].quantity=quantity;this.saveCart()}}removeItem(index){this.items.splice(index,1);this.saveCart()}getSubtotal(){return this.items.reduce((sum,item)=>sum+(item.price*item.quantity),0)}getDeliveryCharge(){return this.getSubtotal()>=this.freeDeliveryThreshold?0:this.deliveryCharge}getTotal(){return this.getSubtotal()+this.getDeliveryCharge()}getTotalItems(){return this.items.reduce((sum,item)=>sum+item.quantity,0)}updateCartCount(){const counts=document.querySelectorAll('.cart-count');const total=this.getTotalItems();counts.forEach(count=>{count.textContent=total;count.style.display=total>0?'flex':'none'})}clear(){this.items=[];this.saveCart()}}const cart=new Cart();function toggleTheme(){const html=document.documentElement;const currentTheme=html.getAttribute('data-theme');const newTheme=currentTheme==='dark'?'light':'dark';html.setAttribute('data-theme',newTheme);localStorage.setItem('nexbd_theme',newTheme)}function loadProducts(){const grid=document.getElementById('productGrid');grid.innerHTML=Object.values(products).map(p=>`<div class="product-card" onclick="navigateTo('product',${p.id})"><div class="product-image-wrapper">${p.badge?`<div class="product-badge">${p.badge}</div>`:''}${p.quality?'<div class="quality-badge">১০০% PREMIUM</div>':''}<img src="${productImages[p.id]}" class="product-img" alt="${p.name}"></div><div class="product-info"><h3 class="product-name">${p.name}</h3><p class="product-description">${p.description}</p><div class="product-footer"><span class="product-price">৳${p.price.toLocaleString('bn-BD')}</span><button class="btn btn-secondary" onclick="event.stopPropagation();navigateTo('product',${p.id})">বিস্তারিত</button></div></div></div>`).join('')}function changeMainImage(src,thumb){document.getElementById('mainProductImage').src=src;document.querySelectorAll('.thumbnail').forEach(t=>t.classList.remove('active'));thumb.classList.add('active')}function navigateTo(page,productId){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));if(page==='home'){document.getElementById('homePage').classList.add('active')}else if(page==='product'){currentProductId=productId||1;initProductPage();document.getElementById('productPage').classList.add('active')}else if(page==='cart'){initCartPage();document.getElementById('cartPage').classList.add('active')}else if(page==='checkout'){if(cart.items.length===0){navigateTo('cart');return}initCheckoutPage();document.getElementById('checkoutPage').classList.add('active')}else if(page==='success'){initSuccessPage();document.getElementById('successPage').classList.add('active')}window.scrollTo(0,0)}function initProductPage(){const product=products[currentProductId];if(product){document.getElementById('productName').textContent=product.name;document.getElementById('productPrice').textContent=`৳${product.price.toLocaleString('bn-BD')}`;document.querySelector('.sticky-amount').textContent=`৳${product.price.toLocaleString('bn-BD')}`;document.getElementById('mainProductImage').src=productImages[currentProductId];const thumbGallery=document.getElementById('thumbnailGallery');const allIds=Object.keys(productImages);const thumbIds=[currentProductId,...allIds.filter(id=>id!=currentProductId)].slice(0,4);thumbGallery.innerHTML=thumbIds.map((id,idx)=>`<div class="thumbnail ${idx===0?'active':''}" onclick="changeMainImage('${productImages[id]}',this)"><img src="${productImages[id]}" class="thumb-img" alt="View ${idx+1}"></div>`).join('')}const quantityInput=document.getElementById('quantityInput');document.getElementById('qtyMinus').onclick=()=>{let value=parseInt(quantityInput.value);if(value>1){quantityInput.value=value-1}};document.getElementById('qtyPlus').onclick=()=>{let value=parseInt(quantityInput.value);if(value<10){quantityInput.value=value+1}};document.querySelectorAll('.size-btn').forEach(btn=>{btn.onclick=()=>{document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}});function handleAddToCart(){const selectedSize=document.querySelector('.size-btn.active');const quantity=parseInt(quantityInput.value);if(!selectedSize){alert('অনুগ্রহ করে একটি সাইজ নির্বাচন করুন');return}const success=cart.addItem(currentProductId,selectedSize.dataset.size,quantity);if(success){showNotification('পণ্য কার্টে যোগ হয়েছে!');quantityInput.value=1}}document.getElementById('addToCartBtn').onclick=handleAddToCart;document.getElementById('mobileAddToCart').onclick=handleAddToCart;document.getElementById('buyNowBtn').onclick=()=>{const selectedSize=document.querySelector('.size-btn.active');const quantity=parseInt(quantityInput.value);if(!selectedSize){alert('অনুগ্রহ করে একটি সাইজ নির্বাচন করুন');return}cart.addItem(currentProductId,selectedSize.dataset.size,quantity);navigateTo('checkout')}}function initCartPage(){renderCart();document.getElementById('proceedToCheckout').onclick=()=>{if(cart.items.length>0){navigateTo('checkout')}}}function renderCart(){const cartItems=document.getElementById('cartItems');const emptyCart=document.getElementById('emptyCart');const cartContent=document.getElementById('cartContent');if(cart.items.length===0){emptyCart.classList.add('show');cartContent.style.display='none';return}emptyCart.classList.remove('show');cartContent.style.display='grid';cartItems.innerHTML=cart.items.map((item,index)=>`<div class="cart-item"><div class="cart-item-image"><img src="${item.image}" class="cart-img" alt="${item.name}"></div><div class="cart-item-details"><h3 class="cart-item-name">${item.name}</h3><div class="cart-item-meta"><span>সাইজ: ${item.size}</span><span>পরিমাণ: ${item.quantity}</span></div><div class="cart-item-price">৳${(item.price*item.quantity).toLocaleString('bn-BD')}</div></div><div class="cart-item-actions"><button class="remove-btn" onclick="removeCartItem(${index})">মুছে ফেলুন</button><div class="item-quantity-controls"><button class="item-qty-btn" onclick="updateCartQuantity(${index},${item.quantity-1})">−</button><div class="item-qty-display">${item.quantity}</div><button class="item-qty-btn" onclick="updateCartQuantity(${index},${item.quantity+1})">+</button></div></div></div>`).join('');updateCartSummary()}function updateCartQuantity(index,newQuantity){cart.updateQuantity(index,newQuantity);renderCart()}function removeCartItem(index){if(confirm('এই পণ্যটি কার্ট থেকে মুছে ফেলতে চান?')){cart.removeItem(index);renderCart()}}function updateCartSummary(){document.getElementById('itemCount').textContent=cart.getTotalItems();document.getElementById('subtotal').textContent=`৳${cart.getSubtotal().toLocaleString('bn-BD')}`;document.getElementById('deliveryCharge').textContent=`৳${cart.getDeliveryCharge().toLocaleString('bn-BD')}`;document.getElementById('totalAmount').textContent=`৳${cart.getTotal().toLocaleString('bn-BD')}`}function initCheckoutPage(){renderCheckoutItems();document.getElementById('checkoutForm').onsubmit=(e)=>{e.preventDefault();if(validateCheckoutForm()){processOrder()}}}function renderCheckoutItems(){const checkoutItems=document.getElementById('checkoutItems');checkoutItems.innerHTML=cart.items.map(item=>`<div class="summary-item"><div class="item-info"><div class="item-name">${item.name}</div><div class="item-details">সাইজ: ${item.size} | পরিমাণ: ${item.quantity}</div></div><div class="item-total">৳${(item.price*item.quantity).toLocaleString('bn-BD')}</div></div>`).join('');document.getElementById('checkoutSubtotal').textContent=`৳${cart.getSubtotal().toLocaleString('bn-BD')}`;document.getElementById('checkoutDelivery').textContent=`৳${cart.getDeliveryCharge().toLocaleString('bn-BD')}`;document.getElementById('checkoutTotal').textContent=`৳${cart.getTotal().toLocaleString('bn-BD')}`}function validateCheckoutForm(){let isValid=true;document.querySelectorAll('.error-message').forEach(el=>el.textContent='');const name=document.getElementById('customerName');if(!name.value.trim()){document.getElementById('nameError').textContent='নাম লিখুন';isValid=false}const phone=document.getElementById('customerPhone');const phoneRegex=/^01[0-9]{9}$/;if(!phoneRegex.test(phone.value.replace(/\s/g,''))){document.getElementById('phoneError').textContent='সঠিক ফোন নম্বর লিখুন (০১xxxxxxxxx)';isValid=false}const address=document.getElementById('customerAddress');if(!address.value.trim()){document.getElementById('addressError').textContent='ঠিকানা লিখুন';isValid=false}const city=document.getElementById('customerCity');if(!city.value){document.getElementById('cityError').textContent='শহর নির্বাচন করুন';isValid=false}return isValid}function processOrder(){const orderData={orderId:generateOrderId(),customer:{name:document.getElementById('customerName').value,phone:document.getElementById('customerPhone').value,address:document.getElementById('customerAddress').value,city:document.getElementById('customerCity').value,zip:document.getElementById('customerZip').value},items:cart.items,subtotal:cart.getSubtotal(),delivery:cart.getDeliveryCharge(),total:cart.getTotal(),notes:document.getElementById('orderNotes').value,paymentMethod:'cod',date:new Date().toISOString()};localStorage.setItem('nexbd_last_order',JSON.stringify(orderData));cart.clear();navigateTo('success')}function generateOrderId(){const timestamp=Date.now();const random=Math.floor(Math.random()*1000);return`NEX${timestamp.toString().slice(-6)}${random.toString().padStart(3,'0')}`}function initSuccessPage(){const orderData=localStorage.getItem('nexbd_last_order');if(!orderData){navigateTo('home');return}const order=JSON.parse(orderData);displayOrderDetails(order)}function displayOrderDetails(order){document.getElementById('displayOrderId').textContent=order.orderId;document.getElementById('displayCustomerName').textContent=order.customer.name;document.getElementById('displayCustomerPhone').textContent=order.customer.phone;document.getElementById('displayCustomerAddress').textContent=order.customer.address;document.getElementById('displayCustomerCity').textContent=order.customer.city;const orderedItems=document.getElementById('orderedItems');orderedItems.innerHTML=order.items.map(item=>`<div class="ordered-item"><div><div class="ordered-item-name">${item.name}</div><div class="ordered-item-details">সাইজ: ${item.size} | পরিমাণ: ${item.quantity}</div></div><div class="ordered-item-price">৳${(item.price*item.quantity).toLocaleString('bn-BD')}</div></div>`).join('');document.getElementById('displaySubtotal').textContent=`৳${order.subtotal.toLocaleString('bn-BD')}`;document.getElementById('displayDelivery').textContent=`৳${order.delivery.toLocaleString('bn-BD')}`;document.getElementById('displayTotal').textContent=`৳${order.total.toLocaleString('bn-BD')}`}function showNotification(message){const notification=document.createElement('div');notification.style.cssText='position:fixed;top:100px;right:20px;background:#10b981;color:white;padding:18px 28px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:10000;animation:slideInRight .3s ease;font-weight:700;font-size:16px';notification.textContent=message;document.body.appendChild(notification);setTimeout(()=>{notification.style.animation='slideOutRight .3s ease';setTimeout(()=>{document.body.removeChild(notification)},300)},3000)}document.addEventListener('DOMContentLoaded',()=>{const savedTheme=localStorage.getItem('nexbd_theme');if(savedTheme){document.documentElement.setAttribute('data-theme',savedTheme)}cart.updateCartCount();loadProducts();document.getElementById('heroImg').src=productImages[1]});
+</script>
+</body>
+</html>
